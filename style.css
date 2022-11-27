@@ -1,0 +1,994 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width:7px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: var(--always-black); 
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background:var(--scrollbar-color); 
+    border-radius: 20px;
+}
+
+
+:root {
+    --yellow: #fed800;
+    --green: #60991a;
+    --red: #d10000;
+    --gray: #c5c5c5;
+    --lightest-gray: #ebeef1;
+    --blue-gray: #222e40;
+    --always-black: #16202c;
+    --always-white: #fff;
+    --main-bg-color: #ffffff;
+    --black-light: #f6fbff;
+    --white: #ffffff;
+    --light-black: #000000b3;
+    --dark-blue: #1d2638;
+    --light-dark-blue: #6f8094;
+    --light-gray: #23313d;
+    --scrollbar-color: #34495a;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+textarea {
+    resize: none;
+}
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: var(--always-black);
+}
+
+
+
+/* header */
+header {
+    width: 100%;
+    height: 90px;
+    display: block;
+    align-items: center;
+    background: var(--always-black);
+    text-transform: capitalize;
+    top: 0px;
+    position: fixed;
+    z-index: 200;
+}
+
+/* top header  */
+header .top-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 10px 0px;
+    color: var(--white);
+    background: var(--always-black);
+}
+.top-header .left-header {
+    display: flex;
+    align-items: center;
+}
+header .top-header .left-header i {
+    font-size: 21px;
+    align-self: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+header .top-header img {
+    width: 93px;
+    height: 32px;
+    align-self: flex-end;
+}
+
+
+
+header .right-header nav{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding-right: 10px;
+}
+
+header .right-header nav li {
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: 400;
+    display: flex;
+}
+
+header .right-header i {
+    font-size: 15px;
+    margin-right: 4px;
+}
+header .right-header .deposit-bar {
+    width: 74px;
+    height: 30px;
+    padding: 6px 15px;
+    color: var(--always-black);
+    background: var(--yellow);
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+header .right-header .fa-sun {
+    font-size: 22px;
+    color:orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* bottom header */
+header .bottom-header nav {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--gray);
+    background: var(--always-black);
+}
+
+header .bottom-header nav li {
+    padding: 2px 8px;
+    display: flex;
+    align-items: center;
+}
+header .bottom-header li:active , header .bottom-header li.active{
+    color: var(--green);
+    font-weight: 620;
+    font-size: 14px;
+}
+
+header .bottom-header .white {
+    color: var(--always-white);
+}
+
+
+/* ===================================       MAIN       =================================== */
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    margin-top: 90px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+
+
+/* ******** ***********  sidebar    *******************/
+main .betika-sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 18% ;
+    height: 100%;
+    padding:0px 0px 10px ;
+    background: var(--always-black);
+    color: var(--gray);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+}
+
+main .betika-sidebar-menu nav{
+    width: 100%;
+    height: auto;
+    padding:10px 10px 100px;
+}
+.betika-sidebar-menu nav li {
+    font-size: 13px;
+    padding: 10px 0px 0px 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.betika-sidebar-menu nav li:active , .betika-sidebar-menu nav .active {
+    color: var(--white);
+    font-weight: 600;
+}
+.betika-sidebar-menu li i {
+    width: 29px;
+    font-size: 16px;
+}
+/* ======================================================================= */
+
+
+
+
+
+/*   ********** betika-matches-container  ************ */
+main .betika-matches-container {
+    display: block;
+    align-self: flex-start;
+    width: 54% ;
+    margin-left: 18%; /* added position fixed to the sidebar */
+    height: auto;
+    padding:10px 0px 120px 0px;
+    background: var(--always-black);
+    color: var(--gray);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+/* match filters */
+.betika-matches-container .matches-filter {
+    display: block;
+    align-items: center;
+    width: 100%;
+    padding:0px 10px ;
+}
+.betika-matches-container .matches-filter .top-filter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.betika-matches-container .matches-filter .top-filter li {
+    margin-right: 20px;
+    cursor: pointer;
+}
+.betika-matches-container .matches-filter .top-filter li:active , .betika-matches-container .matches-filter .top-filter li:first-child {
+    color: var(--always-white);
+    font-weight: 530;
+}
+
+
+
+.betika-matches-container .matches-filter .bottom-filter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 530;
+    color: var(--always-white);
+}
+
+.betika-matches-container .bottom-filter div:first-child , .betika-matches-container .bottom-filter span{
+    padding: 5px 7px;
+    border-radius: 25px;
+    background: var(--light-gray);
+    cursor: pointer;
+}
+
+.betika-matches-container .bottom-filter span {
+    margin: 0px 3px;
+}
+
+
+/* betika banner container */
+.betika-matches-container .betika-banner-container {
+    width: 100%;
+    height: 170px;
+    margin-top: 10px;
+    border-left: 1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.betika-matches-container .betika-banner-container  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+
+
+/* ************** betika matches holder ****************   */
+.betika-matches-container .betika-matches-holder {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.betika-matches-container .betika-matches-holder .header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+}
+/* league header */
+.betika-matches-container .betika-matches-holder .league-header {
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
+/* betika single match holder */
+.betika-matches-holder .betika-single-match  {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* betika match names */
+.betika-teams-names {
+    width: 20%;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--always-white);
+ }
+.betika-matches-holder .betika-odds{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--always-white);
+}
+
+.betika-matches-holder .betika-single-match .betika-odds label  {
+    padding: 5px 41px;
+    border-radius: 25px;
+    background: var(--light-gray);
+    cursor: pointer;
+    font-weight: 520;
+}
+.betika-matches-holder .betika-single-match .betika-odds input {
+    display: none;
+}
+
+/* betika odds selected color */
+.betika-matches-holder .betika-single-match .betika-odds label:hover , .betika-single-match:nth-child(2) .betika-odds label:nth-child(2), .betika-matches-holder .betika-single-match .betika-odds input:checked ~ label {
+    background: var(--yellow);
+    color: var(--always-black);
+}
+
+
+/* betika market share */
+.betika-market-shares {
+    margin-top: 7px;
+    font-size: 13px;
+}
+.betika-market-shares .green{
+    color: var(--green);
+}
+
+/* ================================================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************ betika-placed-bets / betslip ***************   * */
+main .betika-placed-bets {
+    display: block;
+    align-self: flex-start;
+    width: 27.5% ;
+    height: 100%;
+    background: var(--always-black);
+    color: var(--gray);
+    overflow-x: hidden;
+    top: 90px;
+    right: 0px;
+    position:fixed;
+}
+
+.betika-placed-bets .betslip-header {
+    width: 100%;
+    padding:15px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+    font-weight: 520;
+    color: var(--always-white);
+}
+.betika-placed-bets .betslip-header div {
+    cursor: pointer;
+}
+
+.betika-placed-bets .betslip-header div:first-child , .betika-placed-bets .betslip-header div:active{
+    color: var(--green);
+}
+
+
+.betika-placed-bets .search-betslip {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    padding:0px 20px;
+}
+.betika-placed-bets .search-betslip span {
+    color: var(--always-white);
+    font-size: 13.5px;
+}
+.betika-placed-bets .search-betslip input {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background: var(--light-gray);
+}
+.betika-placed-bets .search-betslip input:focus {
+    color: var(--always-white);
+    border:1px solid var(--green);
+}
+.betika-placed-bets .search-betslip button {
+    width: 100%;
+    height: 36px;
+    font-size: 15px;
+    font-weight: 530;
+    background: var(--green);
+    color: var(--always-white);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* ************************    customer support option *****************  */
+.betika-placed-bets .betika-customer-support {
+    display: none;
+    align-items: center;
+    width: 26%;
+    height:83%;
+    border-radius: 8px;
+    background: var(--always-white);
+    color: var(--always-black);
+    overflow-y: scroll;
+    position: fixed;
+    top: 95px;
+    right: 10px;
+    z-index: 100;
+}
+.betika-placed-bets .betika-customer-support::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+.betika-placed-bets .betika-customer-support .header {
+    width: 100%;
+    padding: 10px 20px;
+    height: 50px;
+    top: 0px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background: var(--green);
+    overflow: hidden;
+}
+.betika-placed-bets .betika-customer-support .header .fa-minus{
+    text-align: right;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.betika-placed-bets .betika-customer-support .header .fa-minus:hover{
+    border-radius: 4px;
+    border: 1px solid var(--gray);
+}
+
+
+/* betika customer form */
+.betika-customer-support form {
+    width: 100%;
+    height: auto;
+    display: block;
+    align-items: center;
+    font-size: 13px;
+}
+.betika-customer-support form  .form-groups {
+    width: 100%;
+    height: auto;
+    padding: 20px 20px 50px 20px;
+}
+
+
+
+
+.betika-customer-support form .input-box {
+    width: 100%;
+    font-weight: 560;
+}
+.betika-customer-support form .input-box  label {
+    color: var(--always-black);
+    margin-bottom: 5px;
+}
+.betika-customer-support form .input-box  span {
+    color: var(--light-dark-blue);
+}
+
+.betika-customer-support form .input-box  input , .betika-customer-support form .input-box  textarea {
+    border: 1px solid var(--gray);
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.betika-customer-support form .input-box  input:focus , .betika-customer-support form .input-box  textarea:focus {
+    box-shadow: 0px 0px 2px 1px var(--blue-gray);
+}
+
+.betika-customer-support form .input-box  .file-attachment{
+    border: 1px dashed var(--light-dark-blue);
+} 
+
+
+/* submit button holder */
+.betika-customer-support .betika-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 30px;
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    border-top: 1px solid    var(--gray);
+    bottom: 0px;
+    background: var(--always-white);
+}
+.betika-customer-support .betika-submit-btn button{
+    background: var(--always-black);
+    color: var(--always-white);
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+
+/* betika chat bar / floating chat bar bottom-right */
+body .betika-chat-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: var(--green);
+    border-radius: 25px;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+body .betika-chat-bar i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/* =================================================================== ***********/
+
+
+
+/* **************    deposit money container area    ********* */
+body .betika-deposit-container {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #0000004d;
+    top: 0px;
+    padding-top: 2.4%;
+    position: fixed;
+    z-index: 210;
+}
+
+
+/* contains exit / select amount / enter amount / deposit button */
+.betika-deposit-container .betika-deposit-card {
+    width: auto;
+    height: auto;
+    padding: 30px 30px 40px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: var(--always-black);
+    position: relative;
+}
+.betika-deposit-card .fa-xmark {
+    justify-content: flex-start;
+    cursor: pointer;
+    color: var(--always-white);
+    width: 25px;
+    font-size: 22px;
+    font-weight: 800;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+.betika-deposit-card  .betika-deposit-poster {
+    width: 345px;
+    height: auto;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    display: block;
+    justify-content: flex-start;
+    background: var(--blue-gray);
+    color: var(--gray);
+}
+
+.betika-deposit-poster {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+}
+.betika-deposit-poster p + div {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.betika-deposit-poster .deposit-buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.betika-deposit-poster .deposit-buttons button {
+    background: transparent;
+    color: var(--always-white);
+    font-weight: 560;
+    font-size: 15px;
+    cursor: pointer;
+}
+.betika-deposit-poster input {
+    width: 100%;
+    padding: 9px;
+    background: inherit;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--gray);
+}
+.betika-deposit-poster input:focus {
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    color: var(--always-white);
+}
+.betika-deposit-poster .small-text {
+    font-size: 11px;
+}
+.betika-deposit-poster button {
+    margin-top: 16px;
+    cursor: pointer;
+    padding: 10px;
+    background: var(--green);
+    color: var(--always-white);
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+/* ============================ FOOTER ======================= */
+footer .betika-mobile-footer {
+    display: none;
+}
+
+
+
+
+
+
+
+/* ***************** RESPONSIVE DESIGN *************************************************************************************/
+@media only screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width:0px;
+        height: 0px;
+        display: none;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background:transparent; 
+    }
+    body {
+        height:100%;
+        overflow-y: scroll;
+        padding-bottom: 10px;
+        cursor: none;
+    }
+    img {
+        cursor: none;
+    }
+    a:link, a:visited,  a:hover, a:active , a:hover{
+        background: transparent !important;
+    }
+    header {
+        width: 100%;
+        height: 60px;
+    }
+
+    header .right-header nav {
+        padding-right: 1px;
+    }
+    header .right-header nav li {
+        margin-left: 5px;
+    }
+    header .right-header i {
+        font-size: 20px;
+    }
+    header .right-header .deposit-bar{
+        width: auto;
+        padding: 6px;
+    }
+    header .right-header .deposit-bar span{ 
+        display: flex;
+        font-weight: 530;
+    }
+    .right-header nav li span , .right-header nav li:nth-child(2 ) , .right-header nav li:nth-child(3) , .right-header nav li:nth-child(5){
+        display: none;
+    }
+
+    header .bottom-header nav {
+        display: none;
+        padding: 0px;
+    }
+
+    main {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+
+    /* betika sidebar */
+    main .betika-sidebar-menu {
+        flex-direction: row;
+        width: 100%;
+        height: 50px;
+        padding: 0px 5px 5px;
+        overflow-x: scroll;
+        position: relative; /* added position fixed on desktop */
+    }
+    main .betika-sidebar-menu nav {
+        width: 100%;
+        padding: 0px;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: row;
+    }
+    .betika-sidebar-menu nav li {
+        padding: 5px 0px 0px 5px;
+        margin-right: 5px;
+        margin-bottom: 0px;
+        display: block;
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+
+    /* betika matches container */
+    main .betika-matches-container {
+        width: 100%;
+        margin-left: 0px; /* added margin left on desktop view */
+        padding: 10px 0px 65px 0px;
+    }
+    .betika-matches-container .matches-filter {
+        padding: 0px 5px;
+    }
+    .betika-matches-container .matches-filter .top-filter li{
+        overflow: hidden;
+        display: flex;
+        white-space: nowrap;
+    }
+
+    .betika-matches-container .betika-banner-container {
+        height: 70px;
+    }
+
+    .betika-matches-container .betika-matches-holder {
+        padding: 5px;
+    }
+
+    /* single betika bet holder */
+    .betika-single-match .league-header div:nth-child(1) {
+        width: 65%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .betika-matches-holder .betika-single-match .betika-odds label {
+        padding: 5px 10px;
+    }
+
+    /* betika matches name */
+    .betika-teams-names {
+        width: 45%;
+    }
+
+    .betika-teams-names div {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* betika  betslip  */
+    main .betika-placed-bets {
+        width: 100%;
+        height: auto;
+    }
+
+    .betika-placed-bets .betslip-header , .betika-placed-bets .search-betslip{
+        display: none;
+        padding: 0px;
+    } 
+
+
+    /* customer support option */
+    .betika-placed-bets .betika-customer-support {
+        width: 100%;
+        height:100%;
+        overflow-y: hidden;
+        top: 0px;
+        right: 0px;
+        z-index: 202;
+    }
+
+
+    /* submit button holder */
+    .betika-customer-support .betika-submit-btn {
+        padding: 10px 20px;
+        height: auto;
+        position: fixed;
+    }
+
+    .betika-customer-support .betika-submit-btn button{
+        padding: 12px 26px;
+        font-size: 17px;
+    }
+
+
+
+
+
+    /* ============================================================================== */
+
+    /* betika chat bar / floating chat bar bottom-right */
+    body .betika-chat-bar {
+        display: none;
+    }
+
+    /* **************    deposit money container area    ********* */
+    body .betika-deposit-container {
+        align-items: flex-end;
+        background: #0000004d;
+        bottom: 0px;
+        left: 0px;
+        padding-top: 0px;
+    }
+
+    /* contains exit / select amount / enter amount / deposit button */
+    .betika-deposit-container .betika-deposit-card {
+        align-items: flex-end;
+    }
+
+
+
+
+
+
+
+    /* ============================ FOOTER ======================= */
+
+
+    footer .betika-mobile-footer {
+        width: 100%;
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--always-black);
+        color: var(--gray);
+        position: fixed;
+        bottom: 0px;
+    }
+
+    footer .betika-mobile-footer div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 5px;
+        background: var(--always-black);
+    }
+
+    footer .betika-mobile-footer div:active , footer .betika-mobile-footer div:hover , .betika-mobile-footer div a.active {
+        color: var(--green);
+    }
+
+    footer .betika-mobile-footer i {
+        font-size: 17px;
+    }
+
+    footer .betika-mobile-footer span {
+        font-size: 15px;
+    }
+
+    footer .betika-mobile-footer div:nth-child(3) {
+        border-radius: 50%;
+        width: 60px;
+        height:50px;
+        margin-top: -8px;
+        background: var(--yellow);
+        color: var(--always-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    } 
+
+    footer .betika-mobile-footer div:nth-child(3) i {
+        font-size: 18px !important;
+        margin: 20px;
+    }
+
+
+}
